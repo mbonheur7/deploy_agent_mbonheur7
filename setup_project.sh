@@ -15,14 +15,28 @@ cp attendance_checker.py "$project_dir/"
 cp assets.csv "$project_dir/Helpers/"
 cp config.json "$project_dir/Helpers/"
 cp reports.log "$project_dir/reports/"
-echo "Do you want to update the threshold? (yes/no)?"
+echo "Do you want to update the attendance thresholds? (yes/no)?"
 read answer
 if [ "$answer" = "yes" ]; then
-    echo "Enter warning threshold;"
+    echo "Enter warning threshold:"
     read warning
-    echo "Enter failure threshold"
+    echo "Enter failure threshold:"
     read failure
     sed -i "s/\"warning\": 75/\"warning\": $warning/" "$project_dir/Helpers/config.json"
     sed -i "s/\"failure\": 50/\"failure\": $failure/" "$project_dir/Helpers/config.json"
 
 fi
+#validatin starts here 
+echo "checking if Python is installed.."
+if python3 --version >/dev/null 2>&1; then
+     echo "python3 is installed"
+else
+     echo "Warning: python3 is not installed"
+fi
+
+if [ -d "$project_dir/Helpers" ] && [ -d "$project_dir/reports" ]; then
+   echo "Directory structure verified"
+else
+   echo "Directory structure is incorrect"
+fi
+                   echo "Project setup completed."
