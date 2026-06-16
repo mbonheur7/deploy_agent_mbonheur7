@@ -47,11 +47,6 @@ if [ "$answer" = "yes" ]; then
     sed -i "s/\"warning\": 75/\"warning\": $warning/" "$project_dir/Helpers/config.json"
     sed -i "s/\"failure\": 50/\"failure\": $failure/" "$project_dir/Helpers/config.json"
 fi
-#failure shouldn't be greater than warning
-if [ "$failure" -ge "$warning" ]; then
-    echo "Failure threshold must be less than warning threshold"
-    exit 1
-fi
 #validatin starts here
 echo "checking if Python is installed.."
 if python3 --version >/dev/null 2>&1; then
