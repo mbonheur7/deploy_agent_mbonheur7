@@ -31,3 +31,6 @@ Create an archive named:
 attendance_tracker_<project_name>_archive.tar.gz
 Remove the incomplete project directory.
 Exit safely.
+
+THIS IS THE LINK TO MY VIDEO
+https://drive.google.com/file/d/1DJwQbNBaUyYqMF27_Q7-wm0V-22uALo7/view?usp=sharing
