@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "what is the project name"
+echo "what is the project name?"
 read input
 project_dir="attendance_tracker_$input"
 #empty input
@@ -54,7 +54,6 @@ if python3 --version >/dev/null 2>&1; then
 else
      echo "Warning: python3 is not installed"
 fi
-
 if [ -d "$project_dir/Helpers" ] && [ -d "$project_dir/reports" ]; then
    echo "Directory structure verified"
 else
